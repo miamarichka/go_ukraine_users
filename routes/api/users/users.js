@@ -18,7 +18,7 @@ router.put('/edit',
     authenticate,
     checkPassword,
     CTRL.userEditData);
-router.post('/avatar',
+router.patch('/avatar',
     authenticate,
     (req, res, next) => {
         const userId = req.user.id;
