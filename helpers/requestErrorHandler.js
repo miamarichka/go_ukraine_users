@@ -9,7 +9,6 @@ const errorMessageList = {
 const requestErrorHandler = (status, message = errorMessageList[status]) => {
     const error = new Error(message);
     error.status = status;
-
     return error;
 }
 

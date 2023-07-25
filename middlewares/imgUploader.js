@@ -39,7 +39,7 @@ class ImgUploader {
             }
 
         };
-        
+
         return multer({
             storage: multerConfig,
             fileFilter: multerFilter,
@@ -55,8 +55,8 @@ class ImgUploader {
         const uploadImage = async (imagePath = path) => {
             const options = {
                 use_filename: true,
-                unique_filename: false,
-                overwrite: true,
+                unique_filename: true,
+                overwrite: false,
             };
 
             try {
@@ -72,7 +72,7 @@ class ImgUploader {
         uploadImage();
     };
 
-    static createImageTag (publicId){
+    static createImageTag(publicId) {
         const imageTag = cloudinary.image(publicId, {
             transformation: [
                 { width: 225, height: 225, gravity: 'faces', crop: 'thumb' },
@@ -83,4 +83,5 @@ class ImgUploader {
     };
 }
 
-module.exports = ImgUploader;
+module.exports = ImgUploader; 
+

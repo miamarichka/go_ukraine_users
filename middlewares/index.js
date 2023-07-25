@@ -1,6 +1,6 @@
 const validateUserData = require('./validateUserData');
 const authenticate = require('./authenticate');
-const ImgUploader = require('./imgUploader');
+const ImgUploader = require('./ImgUploader');
 const checkPassword = require('./checkPassword')
 
 module.exports = {
